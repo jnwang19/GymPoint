@@ -42,6 +42,43 @@ class UploadGymsForm extends Component {
     event.preventDefault();
   };
 
+  handleFiles = files => {
+    if (window.FileReader) {
+      this.getAsText(files[0]);
+    } else {
+      alert('FileReader is not supported in this browser.');
+    }
+  };
+
+  getAsText = file => {
+    var reader = new FileReader();
+    reader.readAsText(file);
+    reader.onload = this.loadHandler;
+    reader.onerror = this.errorHandler;
+  };
+
+  loadHandler = event => {
+    var csv = event.target.result;
+    this.processData(csv);
+  };
+
+  processData = csv => {
+    var text = csv.split(/\r\n|\n/);
+
+    for (var i = 0; i < text.length; i++) {
+      var data = text[i].split(/,\s*(?=(?:[^"]|"[^"]*")*$)/g);
+      var name = data[0].replace(/\"/g, "");
+      var address = data[1].replace(/\"/g, "");
+      this.props.firebase.doCreateGym(name, address);
+    }
+  };
+
+  errorHandler = event => {
+    if (event.target.error.name === "NotReadableError") {
+      alert("Cannot read file!");
+    }
+  };
+
   render() {
     const {
       name,
@@ -49,6 +86,7 @@ class UploadGymsForm extends Component {
     } = this.state;
 
     return (
+      <div>
         <form onSubmit={this.addGym}>
           <input
             type="text"
@@ -66,6 +104,14 @@ class UploadGymsForm extends Component {
           />
           <button type="submit">Submit</button>
         </form>
+
+        <input
+          type="file"
+          id="csvInput"
+          onChange={(e) => this.handleFiles(e.target.files)}
+          accept=".csv"
+        />
+      </div>
         );
       }
    }
