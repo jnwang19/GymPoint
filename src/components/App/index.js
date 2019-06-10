@@ -1,11 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import './index.css';
-import * as serviceWorker from './serviceWorker';
+import { FirebaseContext } from '../Firebase';
+import { UploadGymsForm } from "../UploadGyms";
 
-import App from './components/App';
+const App = () => (
+  <FirebaseContext.Consumer>
+    {firebase => <UploadGymsForm firebase={firebase} />}
+  </FirebaseContext.Consumer>
+);
 
-ReactDOM.render(<App />, document.getElementById('root'));
-
-serviceWorker.unregister();
+export default App;

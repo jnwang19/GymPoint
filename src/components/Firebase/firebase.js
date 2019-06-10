@@ -1,4 +1,5 @@
 import app from 'firebase/app';
+import 'firebase/firestore';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,7 +13,14 @@ const config = {
 class Firebase {
   constructor() {
     app.initializeApp(config);
+    this.db = app.firestore();
   }
+
+  doCreateGym = (name, address) => 
+    this.db.collection("gyms").add({
+      name: name,
+      address: address
+    });
 }
 
 export default Firebase;
