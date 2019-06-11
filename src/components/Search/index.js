@@ -61,7 +61,8 @@ class Search extends Component {
   getNearbyPlaces = position => {
     let request = {
       location: position,
-      rankBy: google.maps.places.RankBy.DISTANCE,
+      radius: 50000,
+      //rankBy: google.maps.places.RankBy.DISTANCE,
       type: 'gym'
     };
 
@@ -69,10 +70,14 @@ class Search extends Component {
     service.nearbySearch(request, this.nearbyCallback);
   }
 
-  nearbyCallback = (results, status) => {
+  nearbyCallback = (results, status, pagination) => {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
       console.log(results);
+      if (pagination.hasNextPage) {
+        pagination.nextPage();
+      }
     }
+    console.log("error");
  }
 
   render() {
