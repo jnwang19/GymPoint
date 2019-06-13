@@ -6,7 +6,7 @@ import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => (
   <div>
-    <h1>SignUp</h1>
+    <h1>Sign Up</h1>
     <FirebaseContext.Consumer>
       {firebase => <SignUpForm firebase={firebase} />}
     </FirebaseContext.Consumer>
@@ -101,7 +101,7 @@ class SignUpForm extends Component {
 
 const SignUpLink = () => (
   <p>
-    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
+    Don't have an account? <Link to={ROUTES.SIGN_UP}>Sign Up Here</Link>
   </p>
 );
 
