@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 
 import Script from 'react-load-script';
 
+const SearchPage = () => (
+  <div>
+    <Search />
+  </div>
+);
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -76,8 +82,9 @@ class Search extends Component {
       if (pagination.hasNextPage) {
         pagination.nextPage();
       }
+    } else {
+      console.log("error");
     }
-    console.log("error");
  }
 
   render() {
@@ -90,5 +97,7 @@ class Search extends Component {
     );
   }
 }
+
+export default SearchPage;
 
 export { Search };
