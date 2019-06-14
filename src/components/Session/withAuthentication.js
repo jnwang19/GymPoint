@@ -31,7 +31,7 @@ const withAuthentication = Component => {
       return(
         <AuthUserContext.Provider value={this.state.authUser}>
           <Component {...this.props} />
-          </AuthUserContext.Provider>
+        </AuthUserContext.Provider>
       );
     }
   }
