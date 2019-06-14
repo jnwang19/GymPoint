@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import { FirebaseContext } from '../Firebase';
+import { withAuthentication } from '../Session';
 
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
@@ -18,6 +18,7 @@ const App = () => (
   <Router>
     <div>
       <Navigation />
+
       <hr />
 
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
@@ -29,10 +30,6 @@ const App = () => (
       <Route path={ROUTES.SEARCH_NEARBY} component={SearchPage} />
     </div>
   </Router>
-  // <FirebaseContext.Consumer>
-  //   {firebase => <UploadGymsForm firebase={firebase} />}
-  // </FirebaseContext.Consumer>
-  //< Search />
 );
 
-export default App;
+export default withAuthentication(App);
