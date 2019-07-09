@@ -16,7 +16,7 @@ import * as ROUTES from '../../constants/routes';
 
 const App = () => (
   <Router>
-    <div>
+    <div className="screen">
       <Navigation />
 
       <hr />

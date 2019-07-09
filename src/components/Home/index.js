@@ -1,10 +1,19 @@
 import React from 'react';
+import styles from './Home.module.css';
 
 import { withAuthorization } from '../Session';
 
+
+
 const HomePage = () => (
-  <div>
-    <h1>HomePage</h1>
+  <div className={styles.center}>
+    <div className={styles.container}>
+      <div className={styles.find}></div>
+      <div className={styles.dashboard}></div>
+      <div className={styles.contact}></div>
+      <div className={styles.about}></div>
+      <div className={styles.process}></div>
+    </div>
   </div>
 );
 

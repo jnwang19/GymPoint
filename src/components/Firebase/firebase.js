@@ -34,6 +34,10 @@ class Firebase {
       name: name,
       address: address
     });
+
+  user = uid => this.db.collection("users").doc(uid);
+
+  users = () => this.db.collection('users');
 }
 
 export default Firebase;
