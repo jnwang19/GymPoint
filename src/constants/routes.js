@@ -5,3 +5,6 @@ export const HOME = "/home";
 export const PASSWORD_FORGET = "/pw-forget";
 export const UPLOAD_GYMS = "/upload-gyms";
 export const SEARCH_NEARBY = "/search-nearby";
+export const FIRST_QUESTIONS = "/first-two-questions";
+export const ABOUT = "/about";
+export const CONTACT = "/contact";

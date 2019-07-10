@@ -1,0 +1,26 @@
+.contact {
+  position: absolute;
+  left: 38.75vw;
+  top: 15.63vh;
+  color: #56E690;
+  font-size: 7.81vw;
+  line-height: 9.38vw;
+}
+
+.form {
+  position: absolute;
+  left: 39.14vw;
+  top: 37.5vh;
+  width: 33.75vw;
+  height: 31.25vw;
+  background-color: #d3d3d3
+}
+
+.input {
+  width: 100%;
+}
+
+textarea {
+  height: 50%;
+  width: 100%;
+}

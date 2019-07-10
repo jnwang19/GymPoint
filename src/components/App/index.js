@@ -11,6 +11,9 @@ import PasswordForgetPage from '../PasswordForget';
 import HomePage from '../Home';
 import UploadGyms from '../UploadGyms';
 import SearchPage from '../Search';
+import FirstQuestionsPage from '../FirstQuestions';
+import AboutPage from '../About';
+import ContactPage from '../Contact';
 
 import * as ROUTES from '../../constants/routes';
 
@@ -19,8 +22,6 @@ const App = () => (
     <div className="screen">
       <Navigation />
 
-      <hr />
-
       <Route exact path={ROUTES.LANDING} component={LandingPage} />
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route path={ROUTES.SIGN_IN} component={SignInPage} />
@@ -28,6 +29,9 @@ const App = () => (
       <Route path={ROUTES.HOME} component={HomePage} />
       <Route path={ROUTES.UPLOAD_GYMS} component={UploadGyms} />
       <Route path={ROUTES.SEARCH_NEARBY} component={SearchPage} />
+      <Route path={ROUTES.FIRST_QUESTIONS} component={FirstQuestionsPage} />
+      <Route path={ROUTES.ABOUT} component={AboutPage} />
+      <Route path={ROUTES.CONTACT} component={ContactPage} />
     </div>
   </Router>
 );
