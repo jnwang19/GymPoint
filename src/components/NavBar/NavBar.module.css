@@ -1,0 +1,62 @@
+.navbar {
+  width: 62.97vw;
+  height: 3.91vw;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.88vw;
+  line-height: 1.88vw;
+  opacity: 0.85;
+}
+
+.home {
+  width: 17%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-color: #FFA149;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-top: 1.3%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard {
+  width: 36.6%;
+  height: 100%;
+  position: absolute;
+  left: 19.48%;
+  background-color: #56E690;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-top: 1.3%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact {
+  width: 21.96%;
+  height: 100%;
+  position: absolute;
+  left: 58.56%;
+  background-color: #7BDFF2;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-top: 1.3%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about {
+  width: 17%;
+  height: 100%;
+  position: absolute;
+  left: 83%;
+  background-color: #7BDFF2;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-top: 1.3%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}

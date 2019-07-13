@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import styles from './FirstQuestions.module.css';
 
+import NavBar from '../NavBar';
 import { withAuthorization } from '../Session';
 
 const FirstQuestionsPage = () => (
   <div>
+    <div className={styles.navbar}>
+      <NavBar />
+    </div>
+    <div className={styles.intro}>
+      Great! Let's get you started with <div>two questions.</div>
+    </div>
     <FirstQuestions />
   </div>
 );
@@ -35,7 +42,8 @@ class FirstQuestions extends Component {
         <div className={this.state.isNext ? [styles.question, styles.second].join(' ')
         : [styles.question, styles.second, styles.secondclosed].join(' ')}>
         </div>
-        <div className={[styles.button, styles.prevbutton].join(' ')} onClick={this.prevQuestion}></div>
+        <div className={this.state.isNext ? [styles.button, styles.prevbutton].join(' ')
+      : [styles.button, styles.prevbutton, styles.prevbuttonclosed].join(' ')} onClick={this.prevQuestion}></div>
       </div>
     );
   }
