@@ -1,8 +1,14 @@
 .about {
   position: absolute;
-  left: 38.75vw;
+  left: 13.98vw;
   top: 10.33vw;
   color: #56E690;
   font-size: 7.81vw;
   line-height: 9.38vw;
+}
+
+.navbar {
+  position: absolute;
+  top: 6.38vh;
+  left: 13.98vw;
 }

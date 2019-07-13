@@ -20,6 +20,12 @@
   width: 100%;
 }
 
+.navbar {
+  position: absolute;
+  top: 6.38vh;
+  left: 13.98vw;
+}
+
 textarea {
   height: 50%;
   width: 100%;

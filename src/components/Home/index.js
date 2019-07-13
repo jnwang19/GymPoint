@@ -6,30 +6,6 @@ import posed from 'react-pose';
 import { withAuthorization } from '../Session';
 import * as ROUTES from '../../constants/routes';
 
-// var w = window.innerWidth
-// || document.documentElement.clientWidth
-// || document.body.clientWidth;
-//
-// var h = window.innerHeight
-// || document.documentElement.clientHeight
-// || document.body.clientHeight;
-
-function getW() {
-  var w = window.innerWidth
-  || document.documentElement.clientWidth
-  || document.body.clientWidth;
-  console.log("width: " + w);
-  return w;
-};
-
-function getH() {
-  var h =window.innerHeight
-  || document.documentElement.clientHeight
-  || document.body.clientHeight;
-  console.log("height: " + h);
-  return h;
-};
-
 const Home = posed.div({
   hoverable: true,
   init: {opacity: 0.85},
@@ -70,7 +46,6 @@ const Dashboard = posed.div({
   },
   exit: {
     x: '-12.97vw',
-    // y: '-82.75vh',
     y: 'calc(-42.05vw - 8.88vh)',
     width: '23.05vw',
     height: '3.91vw',
@@ -99,7 +74,35 @@ const About = posed.div({
   },
   exit: {
     x: '-7.89vw',
+    y: 'calc(-32.51vw - 8.88vh)',
     width: '10.7vw',
+    height: '3.91vw',
+    transition: {
+      ease: 'easeInOut'
+    },
+  }
+});
+
+const Contact = posed.div({
+  hoverable: true,
+  init: {opacity: 0.85},
+  hover: {opacity: 1.0},
+  transition: {
+    ease: 'easeInOut'
+  },
+  enter: {
+    x: 0,
+    y: 0,
+    width: '31%',
+    height: '17.24%',
+    transition: {
+      ease: 'easeInOut'
+    },
+  },
+  exit: {
+    x: '-20.23vw',
+    y: 'calc(-42.02vw - 8.88vh)',
+    width: '13.83vw',
     height: '3.91vw',
     transition: {
       ease: 'easeInOut'
@@ -123,10 +126,11 @@ const HomePage = () => (
         </div>
       </Dashboard>
       <Link to={ROUTES.CONTACT}>
-        <div className={[styles.card, styles.contact].join(' ')}>
+        <Contact className={[styles.card, styles.contact].join(' ')}>
           <div className={styles.bluetext}>
-            Contact Us</div>
+            Contact Us
           </div>
+        </Contact>
       </Link>
       <Link to={ROUTES.ABOUT}>
         <About className={[styles.card, styles.about].join(' ')}>

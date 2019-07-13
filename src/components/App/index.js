@@ -39,7 +39,7 @@ const App = () => (
           <Navigation />
 
           <PoseGroup flipMove={false}>
-            <RouteContainer key={location.key}>
+            <RouteContainer key={location.pathname}>
               <Switch location={location}>
                 <Route exact path={ROUTES.LANDING} component={LandingPage} />
                 <Route path={ROUTES.SIGN_UP} component={SignUpPage} />

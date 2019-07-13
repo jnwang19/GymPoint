@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import styles from './FirstQuestions.module.css';
+import posed from 'react-pose';
 
 import NavBar from '../NavBar';
 import { withAuthorization } from '../Session';
 
+const Nav = posed.div({
+  enter: {opacity: 1.0},
+  exit: {opacity: 1.0},
+});
+
 const FirstQuestionsPage = () => (
   <div>
-    <div className={styles.navbar}>
+    <Nav className={styles.navbar}>
       <NavBar />
-    </div>
+    </Nav>
     <div className={styles.intro}>
       Great! Let's get you started with <div>two questions.</div>
     </div>
