@@ -3,9 +3,7 @@ import React, { Component } from 'react';
 import Script from 'react-load-script';
 
 const SearchPage = () => (
-  <div>
     <Search />
-  </div>
 );
 
 class Search extends Component {
@@ -39,7 +37,18 @@ class Search extends Component {
           center: pos,
           zoom: 15
         });
-        self.getNearbyPlaces(pos);
+        // self.getNearbyPlaces(pos);
+
+        var options = {
+
+        };
+
+        self.autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById('searchbar'),
+          options,
+        );
+
+        self.autocomplete.addListener('place_changed', self.handlePlaceSelect);
     }, function(error) {
       clearTimeout(location_timeout);
       self.handleLocationError(true);
@@ -87,11 +96,15 @@ class Search extends Component {
     }
  }
 
+ handlePlaceSelect = () => {
+   console.log(this.autocomplete.getPlace());
+ }
+
   render() {
     return (
-      <div id="map">
-
+      <div>
         <Script url={this.state.url} onLoad={this.handleScriptLoad} />
+        <input type="text" id="searchbar"></input>
         <div id="map"></div>
       </div>
     );

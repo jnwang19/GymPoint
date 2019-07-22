@@ -16,13 +16,14 @@ import SearchPage from '../Search';
 import FirstQuestionsPage from '../FirstQuestions';
 import AboutPage from '../About';
 import ContactPage from '../Contact';
+import TeamPage from '../Team';
 
 import * as ROUTES from '../../constants/routes';
 
 const RouteContainer = posed.div({
   enter: {
     opacity: 1,
-    delay: 100,
+    delay: 200,
     beforeChildren: true,
   },
   exit: {
@@ -36,8 +37,6 @@ const App = () => (
     <Route
       render={({ location }) => (
         <div className="screen">
-          <Navigation />
-
           <PoseGroup flipMove={false}>
             <RouteContainer key={location.pathname}>
               <Switch location={location}>
@@ -51,6 +50,7 @@ const App = () => (
                 <Route path={ROUTES.FIRST_QUESTIONS} component={FirstQuestionsPage} />
                 <Route path={ROUTES.ABOUT} component={AboutPage} />
                 <Route path={ROUTES.CONTACT} component={ContactPage} />
+                <Route path={ROUTES.TEAM} component={TeamPage} />
               </Switch>
             </RouteContainer>
           </PoseGroup>

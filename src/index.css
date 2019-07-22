@@ -21,6 +21,26 @@ code {
   background-color: grey;
 }
 
+.pac-container:after{
+    content:none !important;
+}
+
+.pac-item {
+  font-family: monospace;
+}
+
+#searchbar {
+  height: 80px;
+  font-size: 16px;
+  width: 50%;
+}
+
 html, body, #root {
   height: 100%;
+}
+
+.navbar {
+  position: absolute;
+  top: 6.38vh;
+  left: 13.98vw;
 }

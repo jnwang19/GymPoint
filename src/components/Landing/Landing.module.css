@@ -1,0 +1,84 @@
+.imageone {
+  background-color: #C8C8C8;
+  position: absolute;
+  top: 22.33vh;
+  left: 50vw;
+  width: 39.69vw;
+  height: 31.25vw;
+}
+
+.imagetwo {
+  background-color: #C8C8C8;
+  position: absolute;
+  top: 111.11vh;
+  left: 10.42vw;
+  width: 39.58vw;
+  height: 46.88vw;
+}
+
+.letsfindbutton {
+  background-color: #A8E6CF;
+  position: absolute;
+  top: 73.67vh;
+  left: 10.42vw;
+  width: 17.14vw;
+  height: 3.07vw;
+}
+
+.findagymbutton {
+  background-color: #A8E6CF;
+  position: absolute;
+  top: 205.56vh;
+  left: 64.64vw;
+  width: 11.72vw;
+  height: 3.07vw;
+}
+
+.tellus {
+  background-color: #FF8BA6;
+  position: absolute;
+  top: 111.11vh;
+  left: 60.78vw;
+  width: 21.25vw;
+  height: 10.73vw;
+}
+
+.pickyour {
+  background-color: #FFE8D6;
+  position: absolute;
+  top: 144.11vh;
+  left: 68.44vw;
+  width: 21.25vw;
+  height: 10.73vw;
+}
+
+.scheduleyour {
+  background-color: #A8E6CF;
+  position: absolute;
+  top: 176.11vh;
+  left: 60.78vw;
+  width: 22.76vw;
+  height: 10.73vw;
+}
+
+.team {
+  position: absolute;
+  top: 233.67vh;
+  left: 15.67vw;
+}
+
+.contact {
+  position: absolute;
+  top: 499.89vh;
+  left: 12.29vw;
+}
+
+.backtotop {
+  position: absolute;
+  top: 588.33vh;
+  left: 47.03vw;
+  width: 5.99vw;
+  height: 2.86vw;
+  background-color: #C8C8C8;
+  margin-bottom: 5.78vh;
+}

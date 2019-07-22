@@ -7,8 +7,31 @@
   line-height: 9.38vw;
 }
 
-.navbar {
+.card {
+  width: 21.64vw;
+  height: 7.81vw;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.team {
   position: absolute;
-  top: 6.38vh;
-  left: 13.98vw;
+  left: 15.16vw;
+  top: 75vh;
+  background-color: #FFA149;
+}
+
+.process {
+  position: absolute;
+  left: 39.22vw;
+  top: 75vh;
+  background-color: #56E690;
+}
+
+.why {
+  position: absolute;
+  left: 63.2vw;
+  top: 75vh;
+  background-color: #00A878;
 }

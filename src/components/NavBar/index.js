@@ -6,16 +6,16 @@ import * as ROUTES from '../../constants/routes';
 
 const NavBar = () => (
   <div className={styles.navbar}>
-    <Link to={ROUTES.HOME}>
-      <div className={styles.home}>Home</div>
+    <Link to={ROUTES.LANDING}>
+      <div className={styles.home}>GymPoint.</div>
     </Link>
-    <div className={styles.dashboard}>Account Dashboard</div>
+    <Link to={ROUTES.FIRST_QUESTIONS}>
+      <div className={styles.find}>Find a Gym</div>
+    </Link>
     <Link to={ROUTES.CONTACT}>
       <div className={styles.contact}>Contact Us</div>
     </Link>
-    <Link to={ROUTES.ABOUT}>
-      <div className={styles.about}>About Us</div>
-    </Link>
+    <div className={styles.about}>My Account</div>
   </div>
 );
 

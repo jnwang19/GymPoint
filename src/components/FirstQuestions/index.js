@@ -12,7 +12,7 @@ const Nav = posed.div({
 
 const FirstQuestionsPage = () => (
   <div>
-    <Nav className={styles.navbar}>
+    <Nav className='navbar'>
       <NavBar />
     </Nav>
     <div className={styles.intro}>
