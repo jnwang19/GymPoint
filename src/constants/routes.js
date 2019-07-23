@@ -9,3 +9,4 @@ export const FIRST_QUESTIONS = "/first-two-questions";
 export const ABOUT = "/about";
 export const CONTACT = "/contact";
 export const TEAM = "/team";
+export const PRELIM_RESULTS = "/prelim-results";

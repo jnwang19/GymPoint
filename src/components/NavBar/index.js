@@ -7,7 +7,10 @@ import * as ROUTES from '../../constants/routes';
 const NavBar = () => (
   <div className={styles.navbar}>
     <Link to={ROUTES.LANDING}>
-      <div className={styles.home}>GymPoint.</div>
+      <div className={styles.gympoint}>gympoint.</div>
+    </Link>
+    <Link to={ROUTES.LANDING}>
+      <div className={styles.home}>Home</div>
     </Link>
     <Link to={ROUTES.FIRST_QUESTIONS}>
       <div className={styles.find}>Find a Gym</div>

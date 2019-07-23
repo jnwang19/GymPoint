@@ -1,75 +1,74 @@
-.question{
-  background-color: #56E690;
-  width: 59.92vw;
-  height: 26.56vw;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.6s;
-  transition-duration: 0.6s;
-  -webkit-transition-property: transform opacity;
-  transition-property: transform opacity;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  position: absolute;
-  left: 13.98vw;
-  top: 30.25vh;
-  border-radius: 10px;
-}
-
-.first {
-  opacity: 1.0;
-}
-
-.second {
-  opacity: 1.0;
-}
-
-.secondclosed{
-  opacity: 0.5;
-  -webkit-transform: translateX(65.78vw) scale(0.86);
-  transform: translateX(65.78vw) scale(0.86);
-}
-
-.button {
-  position: absolute;
-  background-color: #ffffff;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-
-.nextbutton {
-  bottom: 10.59%;
-  right: 4.95%;
-  width: 8.08%;
-  height: 19.41%;
-}
-
-.prevbutton {
-  left: 6.25vw;
-  top: 30.25vh;
-  width: 4.84vw;
-  height: 8.25vh;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  -webkit-transition-duration: 0.6s;
-  transition-duration: 0.6s;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-
-.prevbuttonclosed {
-  opacity: 0;
-}
-
-.firstclosed {
-  -webkit-transform: translateY(53.63vh) scale(0.86);
-  transform: translateY(53.63vh) scale(0.86);
-  opacity: 0.5;
-}
-
 .intro {
   position: absolute;
+  top: 19.78vh;
+  left: 5.21vw;
+}
+
+.slidercontainer {
+  position: absolute;
+  top: 70.22vh;
+  left: 8.65vw;
+  width: 35.83vw;
+  height: 6.09vw;
+}
+
+.mccontainer {
+  position: absolute;
+  top: 127.78vh;
+  left: 13.7vw;
+  width: 35.83vw;
+  height: 6.09vw;
+}
+
+.results {
+  position: absolute;
+  top: 254.56vh;
+  left: 6.93vw;
+  width: 17.14vw;
+  height: 3.07vw;
+  background-color: #FF8BA6;
+  color: white;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 10px;
+  background: #DCEDC1;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.76vw;
+  height: 2.76vw;
+  border-radius: 50%;
+  background: #A8E6CF;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 2.76vw;
+  height: 2.76vw;
+  border-radius: 50%;
+  background: #A8E6CF;
+  cursor: pointer;
+}
+
+.option {
+  height: 2.19vw;
+  width: 10vw;
+}
+
+.optionactive {
+  background-color: #FF8BA6;
 }

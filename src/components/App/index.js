@@ -17,6 +17,7 @@ import FirstQuestionsPage from '../FirstQuestions';
 import AboutPage from '../About';
 import ContactPage from '../Contact';
 import TeamPage from '../Team';
+import PrelimResultsPage from '../PrelimResults';
 
 import * as ROUTES from '../../constants/routes';
 
@@ -51,6 +52,10 @@ const App = () => (
                 <Route path={ROUTES.ABOUT} component={AboutPage} />
                 <Route path={ROUTES.CONTACT} component={ContactPage} />
                 <Route path={ROUTES.TEAM} component={TeamPage} />
+                <Route
+                  path={ROUTES.PRELIM_RESULTS}
+                  render= {(props) => <PrelimResultsPage {...props} />}
+                />
               </Switch>
             </RouteContainer>
           </PoseGroup>

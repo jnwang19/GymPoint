@@ -1,47 +1,54 @@
 .navbar {
   position: fixed;
-  top: 0;
-  width: 100vw;
-  height: 3.91vw;
-  background-color: #d3d3d3;
+  top: 4.56vh;
+  left: 5.21vw;
+  width: 89.58vw;
+  height: 2.92vw;
   z-index: 1;
+  font-size: 1.04vw;
+  line-height: 1.46vw;
 }
 
-.home {
+.gympoint {
   position: absolute;
   left: 4.1%;
   top: 17.84%;
-  color: rgba(24,189,142,0.65);
+  color: #39393A;
   font-weight: 700;
   font-size: 2.43vw;
   line-height: 2.78vw;
 }
 
+.home {
+  position: absolute;
+  left: 65.12%;
+  top: 17.84%;
+  color: #39393A;
+}
+
 .find {
   position: absolute;
-  left: 54.72%;
+  left: 71.4%;
   top: 17.84%;
-  font-size: 1.74vw;
-  line-height: 2.43vw;
-  color: #FFA149;
+  color: #FFFFFF;
+  background-color: #A8E6CF;
+  width: 7.66vw;
+  height: 1.93vw;
+  text-align: center;
 }
 
 .contact {
   position: absolute;
-  left: 70.76%;
+  left: 93.49%;
   top: 17.84%;
-  font-size: 1.74vw;
-  line-height: 2.43vw;
-  color: rgba(93,106,98,0.65);
+  color: #39393A;
 }
 
 .about {
   position: absolute;
-  left: 86.6%;
+  left: 83.37%;
   top: 17.84%;
-  font-size: 1.74vw;
-  line-height: 2.43vw;
-  color: #00A878;
+  color: #39393A;
 }
 
 a {

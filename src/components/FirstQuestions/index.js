@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
 import styles from './FirstQuestions.module.css';
 import posed from 'react-pose';
+import { Link } from 'react-router-dom';
 
 import NavBar from '../NavBar';
-import { withAuthorization } from '../Session';
+import PrelimResultsPage from '../PrelimResults';
 
-const Nav = posed.div({
-  enter: {opacity: 1.0},
-  exit: {opacity: 1.0},
-});
+import * as ROUTES from '../../constants/routes';
 
 const FirstQuestionsPage = () => (
   <div>
-    <Nav className='navbar'>
-      <NavBar />
-    </Nav>
+    <NavBar />
     <div className={styles.intro}>
-      Great! Let's get you started with <div>two questions.</div>
+      Let's get you started with three questions
     </div>
     <FirstQuestions />
   </div>
@@ -26,35 +22,63 @@ class FirstQuestions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNext: false
+      price: 50,
+      distance: 0
     };
   };
 
-  nextQuestion = () => {
-    this.setState({isNext: true});
+  onPriceChange = event => {
+    this.setState({price: event.target.value});
   };
 
-  prevQuestion = () => {
-    this.setState({isNext: false});
+  onDistanceChange = choice => {
+    this.setState({distance: choice});
+  };
+
+  onQuestionSubmit = () => {
+
   };
 
   render() {
     return (
       <div>
-        <div className={this.state.isNext ? [styles.question, styles.first, styles.firstclosed].join(' ')
-        : [styles.question, styles.first].join(' ')}>
-          <div className={[styles.button, styles.nextbutton].join(' ')} onClick={this.nextQuestion}></div>
+        <div className={styles.slidercontainer}>
+          <input
+            type="range"
+            min="10"
+            max="100"
+            className={styles.slider}
+            id="myRange"
+            value={this.state.price}
+            onChange={this.onPriceChange}
+            step="5" />
+          <div>${this.state.price}</div>
         </div>
-        <div className={this.state.isNext ? [styles.question, styles.second].join(' ')
-        : [styles.question, styles.second, styles.secondclosed].join(' ')}>
+        <div className={styles.mccontainer}>
+          <div className={this.state.distance == 1 ? [styles.option, styles.optionactive].join(' ') : styles.option}
+            onClick={() => this.onDistanceChange(1)}>A. &#60; 5 Miles</div>
+          <div className={this.state.distance == 2 ? [styles.option, styles.optionactive].join(' ') : styles.option}
+            onClick={() => this.onDistanceChange(2)}>B. 15 Miles</div>
+          <div className={this.state.distance == 3 ? [styles.option, styles.optionactive].join(' ') : styles.option}
+            onClick={() => this.onDistanceChange(3)}>C. 30 Miles</div>
+          <div className={this.state.distance == 4 ? [styles.option, styles.optionactive].join(' ') : styles.option}
+            onClick={() => this.onDistanceChange(4)}>D. 30+ Miles</div>
+          <div className={this.state.distance == 5 ? [styles.option, styles.optionactive].join(' ') : styles.option}
+            onClick={() => this.onDistanceChange(5)}>E. 15 Unimportant</div>
         </div>
-        <div className={this.state.isNext ? [styles.button, styles.prevbutton].join(' ')
-      : [styles.button, styles.prevbutton, styles.prevbuttonclosed].join(' ')} onClick={this.prevQuestion}></div>
+        <Link to={{
+          pathname: ROUTES.PRELIM_RESULTS,
+          state: {
+            price: this.state.price,
+            distance: this.state.distance
+          }}}>
+          <div className={styles.results}>
+            Preliminary Results
+          </div>
+        </Link>
       </div>
     );
   }
 }
 
-const condition = authUser => !!authUser;
-
-export default withAuthorization(condition)(FirstQuestionsPage);
+export default FirstQuestionsPage;

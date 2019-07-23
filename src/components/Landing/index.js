@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Landing.module.css';
+
 import NavBar from '../NavBar';
 import TeamPage from '../Team';
 import ContactPage from '../Contact';
