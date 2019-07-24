@@ -35,6 +35,16 @@ class Firebase {
       address: address
     });
 
+  doQueryGyms = (price) =>
+    this.db.collection("gyms").where(
+      "monthly_fee", "<=", price
+    ).orderBy("monthly_fee")
+    .orderBy("rating").limit(100)
+    .get()
+    .then(function(querySnapshot) {
+      return querySnapshot;
+    });
+
   user = uid => this.db.collection("users").doc(uid);
 
   users = () => this.db.collection('users');

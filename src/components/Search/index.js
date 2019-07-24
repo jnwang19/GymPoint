@@ -27,7 +27,7 @@ class Search extends Component {
           this.setState({
             isLoaded: true,
           });
-          console.log(result);
+          console.log(result["distances"]);
         },
         (error) => {
           this.setState({

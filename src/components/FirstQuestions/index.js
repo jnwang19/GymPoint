@@ -23,9 +23,23 @@ class FirstQuestions extends Component {
     super(props);
     this.state = {
       price: 50,
-      distance: 0
+      distance: 0,
+      lat: 0,
+      long: 0
     };
   };
+
+  componentDidMount = () => {
+    let self = this;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((function(position) {
+        self.setState({lat: position.coords.latitude});
+        self.setState({long: position.coords.longitude});
+      }));
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+  }
 
   onPriceChange = event => {
     this.setState({price: event.target.value});
@@ -64,18 +78,24 @@ class FirstQuestions extends Component {
           <div className={this.state.distance == 4 ? [styles.option, styles.optionactive].join(' ') : styles.option}
             onClick={() => this.onDistanceChange(4)}>D. 30+ Miles</div>
           <div className={this.state.distance == 5 ? [styles.option, styles.optionactive].join(' ') : styles.option}
-            onClick={() => this.onDistanceChange(5)}>E. 15 Unimportant</div>
+            onClick={() => this.onDistanceChange(5)}>E. Unimportant</div>
         </div>
-        <Link to={{
+        {this.state.distance != 0 ?
+          <Link to={{
           pathname: ROUTES.PRELIM_RESULTS,
           state: {
             price: this.state.price,
-            distance: this.state.distance
+            distance: this.state.distance,
+            lat: this.state.lat,
+            long: this.state.long
           }}}>
           <div className={styles.results}>
             Preliminary Results
           </div>
         </Link>
+        : <div className={styles.results}>
+            Preliminary Results
+          </div>}
       </div>
     );
   }
