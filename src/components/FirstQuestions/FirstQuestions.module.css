@@ -1,12 +1,12 @@
 .intro {
   position: absolute;
-  top: 19.78vh;
+  top: 14.83vh;
   left: 5.21vw;
 }
 
 .slidercontainer {
   position: absolute;
-  top: 70.22vh;
+  top: 52.67vh;
   left: 8.65vw;
   width: 35.83vw;
   height: 6.09vw;
@@ -14,7 +14,7 @@
 
 .mccontainer {
   position: absolute;
-  top: 127.78vh;
+  top: 95.83vh;
   left: 13.7vw;
   width: 35.83vw;
   height: 6.09vw;
@@ -22,7 +22,7 @@
 
 .results {
   position: absolute;
-  top: 254.56vh;
+  top: 190.92vh;
   left: 6.93vw;
   width: 17.14vw;
   height: 3.07vw;
@@ -67,6 +67,7 @@
 .option {
   height: 2.19vw;
   width: 10vw;
+  cursor: pointer;
 }
 
 .optionactive {

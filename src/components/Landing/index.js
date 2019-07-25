@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './Landing.module.css';
 
 import NavBar from '../NavBar';
 import TeamPage from '../Team';
 import ContactPage from '../Contact';
+import * as ROUTES from '../../constants/routes';
 
 const LandingPage = () => (
   <div>
     <NavBar />
     <div className={styles.imageone}></div>
     <div className={styles.imagetwo}></div>
-    <div className={styles.letsfindbutton}></div>
+    <Link to={ROUTES.FIRST_QUESTIONS}>
+      <div className={styles.letsfindbutton}>Let's find you a gym</div>
+    </Link>
     <div className={styles.findagymbutton}></div>
     <div className={styles.tellus}></div>
     <div className={styles.pickyour}></div>

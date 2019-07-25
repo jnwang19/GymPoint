@@ -29,14 +29,15 @@ class PrelimResults extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gyms: []
+      gyms: [{name: "Equinox", price: 30, id: 1}, {name: "PF", price: 15, id: 2}]
     };
   };
 
   async componentDidMount() {
     let self = this;
 
-    var initialList = this.props.firebase.doQueryGyms(this.props.price);
+    var initialList = [];
+    // var initialList = this.props.firebase.doQueryGyms(this.props.price);
     for (let i = 0; i < initialList.length; i += 10) {
       var queryCoords = this.props.long.toString() + "," + this.props.lat.toString() + ";";
       var destinations = ""
@@ -78,6 +79,32 @@ class PrelimResults extends Component {
     return (
       <div>
         {this.props.long}
+        <div className={styles.results}>
+          {this.state.gyms.map((gym) => {
+            return (
+              <GymCard
+                key={gym.id}
+                name={gym.name}
+                price={gym.price}
+              />
+            )
+          })}
+        </div>
+      </div>
+    );
+  }
+}
+
+class GymCard extends Component {
+  constructor(props) {
+    super(props);
+  };
+
+  render() {
+    return (
+      <div className={styles.gymcard}>
+        {this.props.name} <br />
+        {this.props.price}
       </div>
     );
   }

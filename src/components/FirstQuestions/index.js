@@ -80,7 +80,7 @@ class FirstQuestions extends Component {
           <div className={this.state.distance == 5 ? [styles.option, styles.optionactive].join(' ') : styles.option}
             onClick={() => this.onDistanceChange(5)}>E. Unimportant</div>
         </div>
-        {this.state.distance != 0 ?
+        {this.state.distance != 0 || this.state.lat != 0 ?
           <Link to={{
           pathname: ROUTES.PRELIM_RESULTS,
           state: {

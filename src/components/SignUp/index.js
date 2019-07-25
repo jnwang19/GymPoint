@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import styles from './SignUp.module.css';
 
+import NavBar from '../NavBar';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
 const SignUpPage = () => (
   <div>
-    <h1>Sign Up</h1>
+    <NavBar />
     <SignUpForm />
   </div>
 );
@@ -72,33 +74,37 @@ class SignUpFormBase extends Component {
       <form onSubmit={this.onSubmit}>
       <input
         name="username"
+        className={[styles.inputsignup, styles.inputfirstname].join(' ')}
         value={username}
         onChange={this.onChange}
         type="text"
-        placeholder="Full Name"
+        placeholder="Just your First Name..."
       />
       <input
         name="email"
+        className={[styles.inputsignup, styles.inputemail].join(' ')}
         value={email}
         onChange={this.onChange}
         type="text"
-        placeholder="Email Address"
+        placeholder="Email..."
       />
       <input
         name="passwordOne"
+        className={[styles.inputsignup, styles.inputpassword].join(' ')}
         value={passwordOne}
         onChange={this.onChange}
         type="password"
-        placeholder="Password"
+        placeholder="Password..."
       />
       <input
         name="passwordTwo"
+        className={[styles.inputsignup, styles.inputconfirm].join(' ')}
         value={passwordTwo}
         onChange={this.onChange}
         type="password"
-        placeholder="Confirm Password"
+        placeholder="Confirm Password..."
       />
-      <button disabled={isInvalid} type="submit">Sign Up</button>
+      <button className={styles.register} disabled={isInvalid} type="submit">Register</button>
 
       {error && <p>{error.message}</p>}
       </form>

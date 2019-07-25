@@ -1,0 +1,41 @@
+.inputsignup {
+  width: 19.01vw;
+  height: 2.08vw;
+  border: 1px solid black;
+  padding-left: 10px;
+  font-size: 1vw;
+}
+
+.inputfirstname {
+  position: absolute;
+  top: 37.42vh;
+  left: 63.54vw;
+}
+
+.inputemail {
+  position: absolute;
+  top: 42.75vh;
+  left: 63.54vw;
+}
+
+.inputpassword {
+  position: absolute;
+  top: 48.17vh;
+  left: 63.54vw;
+}
+
+.inputconfirm {
+  position: absolute;
+  top: 59.17vh;
+  left: 63.54vw;
+}
+
+.register {
+  position: absolute;
+  top: 73.17vh;
+  left: 68.18vw;
+  width: 9.58vw;
+  height: 3.59vw;
+  background-color: #4F4F4F;
+  color: white;
+}

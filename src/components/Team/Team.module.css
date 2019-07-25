@@ -3,3 +3,13 @@
   height: 108.44vw;
   background-color: #C8C8C8;
 }
+
+.signup {
+  position: absolute;
+  bottom: 0;
+  left: 41.8%;
+  width: 16.39%;
+  height: 3.31%;
+  background-color: #A8E6CF;
+  color: white;
+}

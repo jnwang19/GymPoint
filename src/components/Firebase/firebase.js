@@ -39,7 +39,7 @@ class Firebase {
     this.db.collection("gyms").where(
       "monthly_fee", "<=", price
     ).orderBy("monthly_fee")
-    .orderBy("rating").limit(100)
+    .orderBy("rating", "desc").limit(100)
     .get()
     .then(function(querySnapshot) {
       return querySnapshot;
