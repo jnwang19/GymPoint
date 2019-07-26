@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import posed, { PoseGroup } from 'react-pose';
 
 import { withAuthentication } from '../Session';
 
+import Scroll from '../Scroll';
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';

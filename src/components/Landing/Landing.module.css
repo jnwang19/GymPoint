@@ -23,6 +23,12 @@
   left: 10.42vw;
   width: 17.14vw;
   height: 3.07vw;
+  font-weight: 600;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+  text-align: center;
+  padding-top: 0.65vw;
+  box-sizing: border-box;
 }
 
 .findagymbutton {
@@ -32,10 +38,16 @@
   left: 64.64vw;
   width: 11.72vw;
   height: 3.07vw;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 0.65vw;
 }
 
 .tellus {
-  background-color: #FF8BA6;
   position: absolute;
   top: 83.33vh;
   left: 60.78vw;
@@ -44,7 +56,6 @@
 }
 
 .pickyour {
-  background-color: #FFE8D6;
   position: absolute;
   top: 108.08vh;
   left: 68.44vw;
@@ -53,11 +64,10 @@
 }
 
 .scheduleyour {
-  background-color: #A8E6CF;
   position: absolute;
   top: 132.08vh;
   left: 60.78vw;
-  width: 22.76vw;
+  width: 25.76vw;
   height: 10.73vw;
 }
 
@@ -81,4 +91,79 @@
   height: 2.86vw;
   background-color: #C8C8C8;
   margin-bottom: 5.78vh;
+}
+
+.textone {
+  position: absolute;
+  top: 25.75vh;
+  left: 10.42vw;
+  font-size: 2vw;
+  line-height: 2.5vw;
+  font-weight: 800;
+}
+
+.texttwo {
+  position: absolute;
+  top: 44vh;
+  left: 10.42vw;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+}
+
+.textthree {
+  position: absolute;
+  top: 1.46%;
+  left: 18.63%;
+  font-weight: 700;
+  font-size: 1.56vw;
+  line-height: 2.19vw;
+}
+
+.textfour {
+  position: absolute;
+  top: 37.86%;
+  left: 18.63%;
+  font-size: 0.94vw;
+  line-height: 1.3vw;
+}
+
+.boxnumber {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 11.03%;
+  height: 21.84%;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.56vw;
+  line-height: 2.19vw;
+  box-sizing: border-box;
+  padding-top: 0.7%;
+}
+
+.boxone {
+  background-color: #FF8BA6;
+}
+
+.boxtwo {
+  background-color: #FFE8D6;
+}
+
+.boxthree {
+  background-color: #A8E6CF;
+  width: 9.75%;
+}
+
+i {
+  border: solid white;
+  border-width: 0 0.16vw 0.16vw 0;
+  display: inline-block;
+  padding: 0.25vw;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  margin-left: 0.8vw;
 }
