@@ -19,7 +19,7 @@
 .letsfindbutton {
   background-color: #A8E6CF;
   position: absolute;
-  top: 55.25vh;
+  top: 70.25vh;
   left: 10.42vw;
   width: 17.14vw;
   height: 3.07vw;
@@ -89,13 +89,13 @@
   left: 47.03vw;
   width: 5.99vw;
   height: 2.86vw;
-  background-color: #C8C8C8;
   margin-bottom: 5.78vh;
+  cursor: pointer;
 }
 
 .textone {
   position: absolute;
-  top: 25.75vh;
+  top: 40.75vh;
   left: 10.42vw;
   font-size: 2vw;
   line-height: 2.5vw;
@@ -104,7 +104,7 @@
 
 .texttwo {
   position: absolute;
-  top: 44vh;
+  top: 59vh;
   left: 10.42vw;
   font-size: 1.3vw;
   line-height: 1.82vw;
@@ -125,6 +125,15 @@
   left: 18.63%;
   font-size: 0.94vw;
   line-height: 1.3vw;
+}
+
+.textscroll {
+  position: absolute;
+  top: 49.09%;
+  left: 0;
+  color: #000;
+  font-size: 1.04vw;
+  line-heigth: 1.48vw;
 }
 
 .boxnumber {
@@ -162,8 +171,21 @@ i {
   padding: 0.25vw;
 }
 
+i2 {
+  border: solid #000;
+  border-width: 0 0.16vw 0.16vw 0;
+  display: inline-block;
+  padding: 0.25vw;
+}
+
 .right {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   margin-left: 0.8vw;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  margin-left: 42.17%;
 }

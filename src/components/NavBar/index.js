@@ -1,11 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './NavBar.module.css';
+import posed from 'react-pose';
 
 import * as ROUTES from '../../constants/routes';
 
+const Nav = posed.div({
+  enter: {
+    y: '-15vh',
+    opacity: 1,
+    transition: {
+      duration: 500
+    }
+  },
+  exit: {
+    opacity: 0
+  }
+});
+
 const NavBar = () => (
-  <div className={styles.navbar}>
+  <Nav className={styles.navbar}>
     <Link to={ROUTES.LANDING}>
       <div className={styles.gympoint}>gympoint.</div>
     </Link>
@@ -19,7 +33,7 @@ const NavBar = () => (
       <div className={styles.contact}>Contact Us</div>
     </Link>
     <div className={styles.about}>My Account</div>
-  </div>
+  </Nav>
 );
 
 export default NavBar;

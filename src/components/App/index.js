@@ -5,7 +5,6 @@ import posed, { PoseGroup } from 'react-pose';
 
 import { withAuthentication } from '../Session';
 
-import Scroll from '../Scroll';
 import Navigation from '../Navigation';
 import LandingPage from '../Landing';
 import SignUpPage from '../SignUp';
@@ -24,12 +23,9 @@ import * as ROUTES from '../../constants/routes';
 
 const RouteContainer = posed.div({
   enter: {
-    opacity: 1,
-    delay: 200,
     beforeChildren: true,
   },
   exit: {
-    opacity: 0,
     afterChildren: true,
   }
 });

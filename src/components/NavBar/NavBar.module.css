@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  top: 4.56vh;
+  top: 19.56vh;
   left: 5.21vw;
   width: 89.58vw;
   height: 2.92vw;
@@ -8,6 +8,7 @@
   font-weight: 500;
   font-size: 1.04vw;
   line-height: 1.46vw;
+  opacity: 0;
 }
 
 .gympoint {

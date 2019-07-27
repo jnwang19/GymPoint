@@ -56,6 +56,15 @@ class FirstQuestions extends Component {
   render() {
     return (
       <div>
+        <div className={styles.questionone}>
+          <div className={styles.number}>
+            1.
+          </div>
+          <div className={styles.questiontext}>
+            How much are you to spend each month for a gym<br />
+            membership or fitness class?
+          </div>
+        </div>
         <div className={styles.slidercontainer}>
           <input
             type="range"
@@ -68,9 +77,21 @@ class FirstQuestions extends Component {
             step="5" />
           <div>${this.state.price}</div>
         </div>
+        <div className={styles.questiontwo}>
+          <div className={styles.number}>
+            2.
+          </div>
+          <div className={styles.questiontext}>
+            How far are you willing to commute to go to your<br />
+            gym or fitness class?
+          </div>
+        </div>
         <div className={styles.mccontainer}>
           <div className={this.state.distance == 1 ? [styles.option, styles.optionactive].join(' ') : styles.option}
-            onClick={() => this.onDistanceChange(1)}>A. &#60; 5 Miles</div>
+            onClick={() => this.onDistanceChange(1)}>
+            <div className={styles.optionletter}>A.</div>
+            <div className={styles.optiontext}>&#60; 5 Miles</div>
+          </div>
           <div className={this.state.distance == 2 ? [styles.option, styles.optionactive].join(' ') : styles.option}
             onClick={() => this.onDistanceChange(2)}>B. 15 Miles</div>
           <div className={this.state.distance == 3 ? [styles.option, styles.optionactive].join(' ') : styles.option}

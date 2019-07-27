@@ -2,6 +2,9 @@
   position: absolute;
   top: 14.83vh;
   left: 5.21vw;
+  font-weight: 700;
+  font-size: 2.08vw;
+  line-height: 2.92vw;
 }
 
 .slidercontainer {
@@ -16,8 +19,6 @@
   position: absolute;
   top: 95.83vh;
   left: 13.7vw;
-  width: 35.83vw;
-  height: 6.09vw;
 }
 
 .results {
@@ -37,13 +38,8 @@
   height: 10px;
   background: #DCEDC1;
   outline: none;
-  opacity: 0.7;
   -webkit-transition: .2s;
   transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
@@ -66,10 +62,58 @@
 
 .option {
   height: 2.19vw;
-  width: 10vw;
+  width: 11.04vw;
   cursor: pointer;
 }
 
 .optionactive {
   background-color: #FF8BA6;
+}
+
+.optionletter {
+  font-weight: 700;
+  font-size: 1.56vw;
+  line-height: 2.19vw;
+}
+
+.optiontext {
+  position: absolute;
+  top: 1%;
+  left: 32%;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #A8E6CF;
+  font-weight: 700;
+  font-size: 3.13vw;
+  line-height: 4.38vw;
+}
+
+.questionone {
+  position: absolute;
+  top: 27.08vh;
+  left: 8.65vw;
+  width: 40.42vw;
+  height: 8.59vw;
+}
+
+.questiontwo {
+  position: absolute;
+  top: 77.5vh;
+  left: 8.65vw;
+  width: 45.42vw;
+  height: 8.59vw;
+}
+
+.questiontext {
+  position: absolute;
+  top: 50.91%;
+  left: 0;
+  font-size: 1.56vw;
+  line-height: 2.19vw;
 }
