@@ -28,7 +28,17 @@
   width: 17.14vw;
   height: 3.07vw;
   background-color: #FF8BA6;
+  margin-bottom: 12.5vh;
+}
+
+.buttontext {
+  position: absolute;
+  top: 20.33%;
+  left: 7.6%;
   color: white;
+  font-weight: 600;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
 }
 
 .slider {

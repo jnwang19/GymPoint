@@ -29,9 +29,7 @@ const NavBar = () => (
     <Link to={ROUTES.FIRST_QUESTIONS}>
       <div className={styles.find}>Find a Gym</div>
     </Link>
-    <Link to={ROUTES.CONTACT}>
-      <div className={styles.contact}>Contact Us</div>
-    </Link>
+    <div className={styles.contact}>Contact Us</div>
     <div className={styles.about}>My Account</div>
   </Nav>
 );

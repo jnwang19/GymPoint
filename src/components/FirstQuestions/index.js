@@ -8,13 +8,28 @@ import PrelimResultsPage from '../PrelimResults';
 
 import * as ROUTES from '../../constants/routes';
 
+const Page = posed.div({
+  enter: {
+    opacity: 1,
+    transition: {
+      delay: 500,
+      duration: 500
+    }
+  },
+  exit: {
+    opacity: 0
+  }
+});
+
 const FirstQuestionsPage = () => (
   <div>
     <NavBar />
-    <div className={styles.intro}>
-      Let's get you started with three questions
-    </div>
-    <FirstQuestions />
+    <Page>
+      <div className={styles.intro}>
+        Let's get you started with three questions
+      </div>
+      <FirstQuestions />
+    </Page>
   </div>
 );
 
@@ -69,7 +84,7 @@ class FirstQuestions extends Component {
           <input
             type="range"
             min="10"
-            max="100"
+            max="400"
             className={styles.slider}
             id="myRange"
             value={this.state.price}
@@ -111,11 +126,11 @@ class FirstQuestions extends Component {
             long: this.state.long
           }}}>
           <div className={styles.results}>
-            Preliminary Results
+            <div className={styles.buttontext}>Preliminary Results</div>
           </div>
         </Link>
         : <div className={styles.results}>
-            Preliminary Results
+            <div className={styles.buttontext}>Preliminary Results</div>
           </div>}
       </div>
     );

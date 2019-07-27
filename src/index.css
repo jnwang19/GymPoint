@@ -16,11 +16,6 @@ code {
   height: 100%;
 }
 
-#map {
-  height: 100%;
-  background-color: grey;
-}
-
 .pac-container:after{
     content:none !important;
 }
@@ -43,4 +38,37 @@ html, body, #root {
   position: absolute;
   top: 6.38vh;
   left: 13.98vw;
+}
+
+button, input, textarea {
+  font-family: "Poppins";
+  color: #39393A;
+}
+
+i {
+  border: solid white;
+  border-width: 0 0.175vw 0.175vw 0;
+  display: inline-block;
+  padding: 0.25vw;
+}
+
+i2 {
+  border: solid #000;
+  border-width: 0 0.16vw 0.16vw 0;
+  display: inline-block;
+  padding: 0.25vw;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  position: absolute;
+  top: 42%;
+  right: 9.09%;
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  margin-left: 42.17%;
 }
