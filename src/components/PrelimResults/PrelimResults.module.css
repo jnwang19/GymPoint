@@ -8,10 +8,47 @@
 }
 
 .gymcard {
+  position: relative;
   width: 100%;
   height: 10.42vw;
   background-color: #A8E6CF;
   margin-bottom: 3.89vh;
   border-radius: 10px;
   color: white;
+}
+
+.gymname {
+  position: absolute;
+  top: 11%;
+  left: 3.13%;
+  font-weight: 700;
+  font-size: 1.56vw;
+  line-height: 2.19vw;
+}
+
+.gymprice {
+  position: absolute;
+  top: 32%;
+  left: 3.13%;
+  font-size: 1.04vw;
+  line-height: 1.46vw;
+}
+
+.gymrating {
+  position: absolute;
+  bottom: 0;
+  right: 1.38%;
+  font-weight: 700;
+  font-size: 5.21vw;
+  line-height: 7.29vw;
+}
+
+.header {
+  position: absolute;
+  top: 13.42vh;
+  left: 5.21vw;
+  color: #297373;
+  font-weight: 700;
+  font-size: 2.08vw;
+  line-height: 2.92vw;
 }

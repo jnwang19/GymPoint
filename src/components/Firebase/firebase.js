@@ -29,10 +29,23 @@ class Firebase {
 
   doPasswordUpdate = password => this.auth.currentUser.updatePassword(password);
 
-  doCreateGym = (name, address) =>
+  doCreateGym = (name, street, city, state, zip, coordinates, initiation_fee, monthly_fee, phone, website, hours, type, rating, classes, amenities) =>
     this.db.collection("gyms").add({
       name: name,
-      address: address
+      street: street,
+      city: city,
+      state: state,
+      zip: zip,
+      coordinates: coordinates,
+      initation_fee: initiation_fee,
+      monthly_fee: monthly_fee,
+      phone: phone,
+      website: website,
+      hours: hours,
+      type: type,
+      rating: rating,
+      classes: classes,
+      amenities: amenities
     });
 
   doQueryGyms = (price) =>

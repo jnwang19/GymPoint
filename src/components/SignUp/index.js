@@ -9,6 +9,10 @@ import * as ROUTES from '../../constants/routes';
 const SignUpPage = () => (
   <div>
     <NavBar />
+    <div className={styles.header}>
+      Just fill in a few things and<br />
+      we will move right along
+    </div>
     <SignUpForm />
   </div>
 );

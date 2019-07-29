@@ -118,7 +118,7 @@ class ScrollButton extends Component {
     super(props);
   };
 
-  componentDidMount() {
+  componentWillUnmount() {
     window.scrollTo(0, 0);
   };
 

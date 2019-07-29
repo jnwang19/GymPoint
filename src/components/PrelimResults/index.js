@@ -11,6 +11,9 @@ const PrelimResultsPage = props => (
   <div>
     <NavBar />
     <h1>{props.location.state.lat}|{props.location.state.long}</h1>
+    <div className={styles.header}>
+      Preliminary Results
+    </div>
     <FirebaseContext.Consumer>
       {firebase =>
         <PrelimResults
@@ -103,8 +106,15 @@ class GymCard extends Component {
   render() {
     return (
       <div className={styles.gymcard}>
-        {this.props.name} <br />
-        {this.props.price}
+        <div className={styles.gymname}>
+          {this.props.name}
+        </div>
+        <div className={styles.gymprice}>
+          ${this.props.price} / Month
+        </div>
+        <div className={styles.gymrating}>
+          4.0
+        </div>
       </div>
     );
   }
