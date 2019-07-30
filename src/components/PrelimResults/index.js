@@ -7,6 +7,19 @@ import NavBar from '../NavBar';
 import * as ROUTES from '../../constants/routes';
 import { FirebaseContext } from '../Firebase';
 
+const LoadScreen = posed.div({
+  open: {
+    opacity: 100,
+    staggerChildren: 50
+  },
+  closed: { opacity: 0 }
+});
+
+const LoadText = posed.div({
+  open: { opacity: 1 },
+  closed: { opacity: 0 }
+});
+
 const PrelimResultsPage = props => (
   <div>
     <NavBar />
@@ -81,18 +94,20 @@ class PrelimResults extends Component {
   render() {
     return (
       <div>
-        {this.props.long}
-        <div className={styles.results}>
-          {this.state.gyms.map((gym) => {
-            return (
-              <GymCard
-                key={gym.id}
-                name={gym.name}
-                price={gym.price}
-              />
-            )
-          })}
-        </div>
+        {true ?
+          <div className={styles.loading}></div>
+          : <div className={styles.results}>
+              {this.state.gyms.map((gym) => {
+                return (
+                  <GymCard
+                    key={gym.id}
+                    name={gym.name}
+                    price={gym.price}
+                  />
+                )
+              })}
+            </div>
+        }
       </div>
     );
   }

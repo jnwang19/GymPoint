@@ -59,7 +59,7 @@ class FirstQuestions extends Component {
   componentWillUnmount() {
     window.scrollTo(0, 0);
   };
-  
+
   onPriceChange = event => {
     this.setState({price: event.target.value});
   };
@@ -112,13 +112,25 @@ class FirstQuestions extends Component {
             <div className={styles.optiontext}>&#60; 5 Miles</div>
           </div>
           <div className={this.state.distance == 2 ? [styles.option, styles.optionactive].join(' ') : styles.option}
-            onClick={() => this.onDistanceChange(2)}>B. 15 Miles</div>
+            onClick={() => this.onDistanceChange(2)}>
+            <div className={styles.optionletter}>B.</div>
+            15 Miles
+          </div>
           <div className={this.state.distance == 3 ? [styles.option, styles.optionactive].join(' ') : styles.option}
-            onClick={() => this.onDistanceChange(3)}>C. 30 Miles</div>
+            onClick={() => this.onDistanceChange(3)}>
+            <div className={styles.optionletter}>C.</div>
+            30 Miles
+          </div>
           <div className={this.state.distance == 4 ? [styles.option, styles.optionactive].join(' ') : styles.option}
-            onClick={() => this.onDistanceChange(4)}>D. 30+ Miles</div>
+            onClick={() => this.onDistanceChange(4)}>
+            <div className={styles.optionletter}>D.</div>
+            30+ Miles
+          </div>
           <div className={this.state.distance == 5 ? [styles.option, styles.optionactive].join(' ') : styles.option}
-            onClick={() => this.onDistanceChange(5)}>E. Unimportant</div>
+            onClick={() => this.onDistanceChange(5)}>
+            <div className={styles.optionletter}>E.</div>
+            Unimportant
+          </div>
         </div>
         {this.state.distance != 0 && this.state.lat != 0 ?
           <Link to={{

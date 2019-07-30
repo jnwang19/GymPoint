@@ -13,3 +13,12 @@
   background-color: #A8E6CF;
   color: white;
 }
+
+.buttontext {
+  position: absolute;
+  top: 24.64%;
+  left: 11.57%;
+  font-weight: 600;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+}

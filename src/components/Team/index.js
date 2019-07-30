@@ -11,7 +11,8 @@ const TeamPage = () => (
     Meet the Team
     <Link to={ROUTES.SIGN_UP}>
       <div className={styles.signup}>
-        Sign me up
+        <div className={styles.buttontext}>Sign me up</div>
+        <i className="right"></i>
       </div>
     </Link>
   </div>

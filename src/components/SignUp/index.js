@@ -1,19 +1,35 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import styles from './SignUp.module.css';
+import posed from 'react-pose';
 
 import NavBar from '../NavBar';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../constants/routes';
 
+const Page = posed.div({
+  enter: {
+    opacity: 1,
+    transition: {
+      delay: 500,
+      duration: 500
+    }
+  },
+  exit: {
+    opacity: 0
+  }
+});
+
 const SignUpPage = () => (
   <div>
     <NavBar />
-    <div className={styles.header}>
-      Just fill in a few things and<br />
-      we will move right along
-    </div>
-    <SignUpForm />
+    <Page>
+      <div className={styles.header}>
+        Just fill in a few things and<br />
+        we will move right along
+      </div>
+      <SignUpForm />
+    </Page>
   </div>
 );
 
@@ -108,6 +124,11 @@ class SignUpFormBase extends Component {
         type="password"
         placeholder="Confirm Password..."
       />
+      {this.state.passwordOne == this.state.passwordTwo && this.state.passwordOne != "" ?
+        <div className={styles.match}>
+          Match!
+        </div>
+        : null}
       <button className={styles.register} disabled={isInvalid} type="submit">Register</button>
 
       {error && <p>{error.message}</p>}

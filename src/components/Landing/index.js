@@ -102,10 +102,12 @@ const LandingPage = () => (
           your new lifestyle.
         </div>
       </div>
-      <div className={styles.findagymbutton}>
-        <div className={styles.buttontexttwo}>Find a Gym</div>
-        <i className="right"></i>
-      </div>
+      <Link to={ROUTES.FIRST_QUESTIONS}>
+        <div className={styles.findagymbutton}>
+          <div className={styles.buttontexttwo}>Find a Gym</div>
+          <i className="right"></i>
+        </div>
+      </Link>
       <div className={styles.team}><TeamPage /></div>
       <div className={styles.contact}><ContactPage /></div>
       <ScrollButton />

@@ -52,3 +52,13 @@
   font-size: 2.08vw;
   line-height: 2.92vw;
 }
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #A8E6CF;
+  z-index: 2;
+}
