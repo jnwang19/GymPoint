@@ -12,7 +12,7 @@ const TeamPage = () => (
     <Link to={ROUTES.SIGN_UP}>
       <div className={styles.signup}>
         <div className={styles.buttontext}>Sign me up</div>
-        <i className="right"></i>
+        <checkhor className="right"></checkhor>
       </div>
     </Link>
   </div>

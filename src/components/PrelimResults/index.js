@@ -10,9 +10,11 @@ import { FirebaseContext } from '../Firebase';
 const LoadScreen = posed.div({
   open: {
     opacity: 100,
-    staggerChildren: 50
+    staggerChildren: 3000
   },
-  closed: { opacity: 0 }
+  closed: {
+    opacity: 0
+  }
 });
 
 const LoadText = posed.div({
@@ -20,36 +22,54 @@ const LoadText = posed.div({
   closed: { opacity: 0 }
 });
 
-const PrelimResultsPage = props => (
-  <div>
-    <NavBar />
-    <h1>{props.location.state.lat}|{props.location.state.long}</h1>
-    <div className={styles.header}>
-      Preliminary Results
-    </div>
-    <FirebaseContext.Consumer>
-      {firebase =>
-        <PrelimResults
-          firebase={firebase}
-          price={props.location.state.price}
-          distance={props.location.state.distance}
-          lat={props.location.state.lat}
-          long={props.location.state.long}
-        />
-      }
-    </FirebaseContext.Consumer>
-  </div>
-);
+class PrelimResultsPage extends Component {
+  constructor(props) {
+    super(props);
+    if (props.location.state == undefined) {
+      this.props.history.push(ROUTES.LANDING);
+    }
+  }
+
+  render() {
+    return (
+      <div>
+      { this.props.location.state == undefined ? null :
+      <div>
+        <NavBar />
+        <h1>{this.props.location.state.lat}|{this.props.location.state.long}</h1>
+        <div className={styles.header}>
+          Preliminary Results
+        </div>
+        <FirebaseContext.Consumer>
+          {firebase =>
+            <PrelimResults
+              firebase={firebase}
+              price={this.props.location.state.price}
+              distance={this.props.location.state.distance}
+              lat={this.props.location.state.lat}
+              long={this.props.location.state.long}
+            />
+          }
+        </FirebaseContext.Consumer>
+      </div>}
+      </div>
+    );
+  }
+}
 
 class PrelimResults extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gyms: [{name: "Equinox", price: 30, id: 1}, {name: "PF", price: 15, id: 2}]
+      gyms: [{name: "Equinox", price: 30, id: 1}, {name: "PF", price: 15, id: 2}],
+      isLoading: false,
     };
   };
 
   async componentDidMount() {
+
+
+    this.setState({isLoading: true});
     let self = this;
 
     var initialList = [];
@@ -73,6 +93,7 @@ class PrelimResults extends Component {
       var resJson = await this.getJson(res);
       await this.distanceFilter(resJson, i, initialList);
       if (this.state.gyms.length >= 6) {
+        this.setState({isLoading: false});
         break;
       }
     }
@@ -94,8 +115,13 @@ class PrelimResults extends Component {
   render() {
     return (
       <div>
-        {true ?
-          <div className={styles.loading}></div>
+        {false ?
+          <LoadScreen className={styles.loading} pose={this.state.isLoading ? 'open' : 'closed'}>
+            <LoadText className={styles.loadtextone}>Processing your responses</LoadText>
+            <LoadText className={styles.loadtexttwo}>Collecting search results</LoadText>
+            <LoadText className={styles.loadtextthree}>Making things look pretty</LoadText>
+            <LoadText className={styles.loadtextfour}>Just a little more...</LoadText>
+          </LoadScreen>
           : <div className={styles.results}>
               {this.state.gyms.map((gym) => {
                 return (

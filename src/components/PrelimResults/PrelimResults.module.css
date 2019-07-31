@@ -61,4 +61,33 @@
   height: 100vh;
   background-color: #A8E6CF;
   z-index: 2;
+  color: white;
+  font-weight: 700;
+  font-size: 2.08vw;
+  line-height: 2.92vw;
+  text-align: center;
+}
+
+.loadtextone {
+  position: absolute;
+  top: 20.17vh;
+  left: 35.63vw;
+}
+
+.loadtexttwo {
+  position: absolute;
+  top: 24.83vh;
+  left: 36.67vw;
+}
+
+.loadtextthree {
+  position: absolute;
+  top: 29.5vh;
+  left: 36.35vw;
+}
+
+.loadtextfour {
+  position: absolute;
+  top: 34.17vh;
+  left: 40.36vw;
 }

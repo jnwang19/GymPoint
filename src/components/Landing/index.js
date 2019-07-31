@@ -51,7 +51,7 @@ const LandingPage = () => (
       <Link to={ROUTES.FIRST_QUESTIONS}>
         <div className={styles.letsfindbutton}>
           <div className={styles.buttontextone}>Let's find you a gym</div>
-          <i className="right"></i>
+          <checkhor className="right"></checkhor>
         </div>
       </Link>
     </Top>
@@ -105,7 +105,7 @@ const LandingPage = () => (
       <Link to={ROUTES.FIRST_QUESTIONS}>
         <div className={styles.findagymbutton}>
           <div className={styles.buttontexttwo}>Find a Gym</div>
-          <i className="right"></i>
+          <checkhor className="right"></checkhor>
         </div>
       </Link>
       <div className={styles.team}><TeamPage /></div>
@@ -134,7 +134,7 @@ class ScrollButton extends Component {
   render() {
     return (
       <div className={styles.backtotop} onClick={this.scrollToTop}>
-        <i2 className="up"></i2>
+        <checkver className="up"></checkver>
         <div className={styles.textscroll}>Back to Top</div>
       </div>
     )

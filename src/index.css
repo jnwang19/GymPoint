@@ -45,14 +45,14 @@ button, input, textarea {
   color: #39393A;
 }
 
-i {
+checkhor {
   border: solid white;
   border-width: 0 0.175vw 0.175vw 0;
   display: inline-block;
   padding: 0.25vw;
 }
 
-i2 {
+checkver {
   border: solid #000;
   border-width: 0 0.16vw 0.16vw 0;
   display: inline-block;

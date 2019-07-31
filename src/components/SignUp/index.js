@@ -24,10 +24,6 @@ const SignUpPage = () => (
   <div>
     <NavBar />
     <Page>
-      <div className={styles.header}>
-        Just fill in a few things and<br />
-        we will move right along
-      </div>
       <SignUpForm />
     </Page>
   </div>
@@ -91,48 +87,67 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-      <input
-        name="username"
-        className={[styles.inputsignup, styles.inputfirstname].join(' ')}
-        value={username}
-        onChange={this.onChange}
-        type="text"
-        placeholder="Just your First Name..."
-      />
-      <input
-        name="email"
-        className={[styles.inputsignup, styles.inputemail].join(' ')}
-        value={email}
-        onChange={this.onChange}
-        type="text"
-        placeholder="Email..."
-      />
-      <input
-        name="passwordOne"
-        className={[styles.inputsignup, styles.inputpassword].join(' ')}
-        value={passwordOne}
-        onChange={this.onChange}
-        type="password"
-        placeholder="Password..."
-      />
-      <input
-        name="passwordTwo"
-        className={[styles.inputsignup, styles.inputconfirm].join(' ')}
-        value={passwordTwo}
-        onChange={this.onChange}
-        type="password"
-        placeholder="Confirm Password..."
-      />
-      {this.state.passwordOne == this.state.passwordTwo && this.state.passwordOne != "" ?
-        <div className={styles.match}>
-          Match!
-        </div>
-        : null}
-      <button className={styles.register} disabled={isInvalid} type="submit">Register</button>
+      <div>
+        { true ?
+          <div>
+            <div className={styles.confirmtext}>
+              Thank you! Now let's get to<br />
+              finding you your gym!
+            </div>
+            <div className={styles.circle}>
+            </div>
+          </div>
+        :
+          <div>
+            <div className={styles.header}>
+              Just fill in a few things and<br />
+              we will move right along
+            </div>
+            <form onSubmit={this.onSubmit}>
+            <input
+              name="username"
+              className={[styles.inputsignup, styles.inputfirstname].join(' ')}
+              value={username}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Just your First Name..."
+            />
+            <input
+              name="email"
+              className={[styles.inputsignup, styles.inputemail].join(' ')}
+              value={email}
+              onChange={this.onChange}
+              type="text"
+              placeholder="Email..."
+            />
+            <input
+              name="passwordOne"
+              className={[styles.inputsignup, styles.inputpassword].join(' ')}
+              value={passwordOne}
+              onChange={this.onChange}
+              type="password"
+              placeholder="Password..."
+            />
+            <input
+              name="passwordTwo"
+              className={[styles.inputsignup, styles.inputconfirm].join(' ')}
+              value={passwordTwo}
+              onChange={this.onChange}
+              type="password"
+              placeholder="Confirm Password..."
+            />
+            {this.state.passwordOne == this.state.passwordTwo && this.state.passwordOne != "" ?
+              <div className={styles.match}>
+                Match!
+              </div>
+              : null}
+            <button className={styles.register} disabled={isInvalid} type="submit">Register</button>
 
-      {error && <p>{error.message}</p>}
-      </form>
+            {error && <p>{error.message}</p>}
+            </form>
+          </div>
+        }
+      </div>
     );
   }
 }

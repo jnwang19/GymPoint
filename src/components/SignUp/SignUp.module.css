@@ -55,3 +55,22 @@
   top: 59.42vh;
   left: 83.91vw;
 }
+
+.confirmtext {
+  position: absolute;
+  top: 25.92vh;
+  left: 63.59vw;
+  font-weight: 700;
+  font-size: 1.56vw;
+  line-height: 2.19vw;
+}
+
+.circle {
+  position: absolute;
+  top: 43.25vh;
+  left: 70.1vw;
+  width: 8.23vw;
+  height: 8.23vw;
+  border-radius: 50%;
+  background-color: #A8E6CF;
+}
