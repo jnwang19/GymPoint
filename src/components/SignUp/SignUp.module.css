@@ -74,3 +74,22 @@
   border-radius: 50%;
   background-color: #A8E6CF;
 }
+
+.findbutton {
+  position: absolute;
+  top: 62.92vh;
+  left: 65.68vw;
+  width: 17.29vw;
+  height: 3.59vw;
+  background-color: #A8E6CF;
+}
+
+.buttontext {
+  position: absolute;
+  top: 24.64%;
+  left: 7.53%;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+}

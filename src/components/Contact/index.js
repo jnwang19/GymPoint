@@ -59,7 +59,7 @@ class ContactForm extends Component {
         </div>
         <button className={styles.send} disabled={true} onClick={this.onSubmit}>
           <div className={styles.buttontext}>Send Message</div>
-          <i className="right"></i>
+          <checkhor className="right"></checkhor>
         </button>
       </div>
     );

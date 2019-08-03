@@ -94,7 +94,7 @@ class FirstQuestions extends Component {
             value={this.state.price}
             onChange={this.onPriceChange}
             step="5" />
-          <div>${this.state.price}</div>
+          <div className={styles.price}>${this.state.price}</div>
         </div>
         <div className={styles.questiontwo}>
           <div className={styles.number}>
@@ -143,10 +143,12 @@ class FirstQuestions extends Component {
           }}}>
           <div className={styles.results}>
             <div className={styles.buttontext}>Preliminary Results</div>
+            <checkhor className="right"></checkhor>
           </div>
         </Link>
         : <div className={styles.results}>
             <div className={styles.buttontext}>Preliminary Results</div>
+            <checkhor className="right"></checkhor>
           </div>}
       </div>
     );

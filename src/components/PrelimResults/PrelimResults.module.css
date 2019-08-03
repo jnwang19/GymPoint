@@ -91,3 +91,57 @@
   top: 34.17vh;
   left: 40.36vw;
 }
+
+.message {
+  position: absolute;
+  top: 20.33vh;
+  left: 58.59vw;
+  width: 26.56vw;
+  height: 28.07vw;
+}
+
+.messageheader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  font-size: 2.08vw;
+  line-height: 2.92vw;
+}
+
+.messagebody {
+  position: absolute;
+  top: 18.55%;
+  left: 0;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+}
+
+.messagesignup {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 33.73%;
+  height: 12.8%;
+  background-color: #FF8BA6;
+  color: white;
+}
+
+.messagetext {
+  position: absolute;
+  top: 24.64%;
+  left: 14.53%;
+  font-weight: 600;
+  font-size: 1.3vw;
+  line-height: 1.82vw;
+}
+
+.messagecancel {
+  position: absolute;
+  bottom: 0;
+  left: 52.16%;
+  width: 41.86%;
+  height: 12.8%;
+  border-style: solid;
+  border-width: 0.1vw;
+}

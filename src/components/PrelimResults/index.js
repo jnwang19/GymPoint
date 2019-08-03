@@ -34,24 +34,52 @@ class PrelimResultsPage extends Component {
     return (
       <div>
       { this.props.location.state == undefined ? null :
-      <div>
-        <NavBar />
-        <h1>{this.props.location.state.lat}|{this.props.location.state.long}</h1>
-        <div className={styles.header}>
-          Preliminary Results
+        <div>
+          <NavBar />
+          <h1>{this.props.location.state.lat}|{this.props.location.state.long}</h1>
+          <div className={styles.header}>
+            Preliminary Results
+          </div>
+          <FirebaseContext.Consumer>
+            {firebase =>
+              <PrelimResults
+                firebase={firebase}
+                price={this.props.location.state.price}
+                distance={this.props.location.state.distance}
+                lat={this.props.location.state.lat}
+                long={this.props.location.state.long}
+              />
+            }
+          </FirebaseContext.Consumer>
+          <div className={styles.message}>
+            <div className={styles.messageheader}>
+              A quick message
+            </div>
+            <div className={styles.messagebody}>
+              Here are the preliminary results we<br />
+              found for you based on price and<br />
+              distance.<br /><br />
+              Keep in mind that if you sign up, we can<br />
+              take into consideration conditions such<br />
+              as classes you'd like to take, personal<br />
+              training, and offer special discounts for<br />
+              certain gyms!
+            </div>
+            <div className={styles.messagesignup}>
+              <div className={styles.messagetext}>
+                Sign Up
+              </div>
+              <checkhor className="right"></checkhor>
+            </div>
+            <div className={styles.messagecancel}>
+              <div className={styles.messagetext}>
+                No, thanks
+              </div>
+              <checkhorblack className="right"></checkhorblack>
+            </div>
+          </div>
         </div>
-        <FirebaseContext.Consumer>
-          {firebase =>
-            <PrelimResults
-              firebase={firebase}
-              price={this.props.location.state.price}
-              distance={this.props.location.state.distance}
-              lat={this.props.location.state.lat}
-              long={this.props.location.state.long}
-            />
-          }
-        </FirebaseContext.Consumer>
-      </div>}
+      }
       </div>
     );
   }
@@ -107,6 +135,7 @@ class PrelimResults extends Component {
     var distances = result["distances"];
     for (let j = 0; j < distances.length; j++) {
       if (distances[j] <= this.props.distance) {
+        initialList[i + j].distance = distances[j];
         this.setState({gyms: this.state.gyms.concat(initialList[i + j])});
       }
     }

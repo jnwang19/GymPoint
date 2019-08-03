@@ -96,6 +96,14 @@ class SignUpFormBase extends Component {
             </div>
             <div className={styles.circle}>
             </div>
+            <Link to={ROUTES.FIRST_QUESTIONS}>
+              <div className={styles.findbutton}>
+                <div className={styles.buttontext}>
+                  Now let's find a gym
+                </div>
+                <checkhor className="right"></checkhor>
+              </div>
+            </Link>
           </div>
         :
           <div>
