@@ -11,6 +11,16 @@ const UploadGyms = () => (
   </div>
 );
 
+const DAYS = {
+  Mon: 1,
+  Tues: 2,
+  Wed: 3,
+  Thurs: 4,
+  Fri: 5,
+  Sat: 6,
+  Sun: 7,
+};
+
 class UploadGymsForm extends Component {
   constructor(props) {
     super(props);
@@ -25,8 +35,8 @@ class UploadGymsForm extends Component {
      monthly_fee: 0,
      phone: "",
      website: "",
-     hours: [],
-     type: "",
+     hours: {},
+     type: [],
      rating: 0,
      classes: [],
      amenities: []
@@ -92,21 +102,41 @@ class UploadGymsForm extends Component {
       var phone = data[8].replace(/\"/g, "");
       var website = data[9].replace(/\"/g, "");
       var hoursList = data[10].split("|");
-      var hours = [];
+      var hours = {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: []
+      };
       for (let j = 0; j < hoursList.length; j++) {
-        hours.push(hoursList[j]).replace(/\"/g, "");
+        var hoursListSplit = hoursList[j].split(":");
+        var days = hoursListSplit[0].split("-");
+        var times = hoursListSplit[1].split(" ");
+        for (let k = DAYS[days[0]]; k <= DAYS[days[days.length - 1]]; k++) {
+          for (let l = 0; l < times.length; l++) {
+            var timeRange = times[l].split("-");
+            var timeObject = {start: timeRange[0], end: timeRange[1]}
+            hours[DAYS[days[0]]].push(timeObject);
+          }
+        }
       }
-      var type = data[11].replace(/\"/g, "");
+      var typeList = data[11].split("/");
+      for (let j = 0; j < typeList.length; j++) {
+        type.push(typeList[j]);
+      }
       var rating = data[12].replace(/\"/g, "").parseFloat();
       var classesList = data[13].split("|");
       var classes = [];
       for (let j = 0; j < classesList.length; j++) {
-        classes.push(classesList[j]).replace(/\"/g, "");
+        classes.push(classesList[j]);
       }
       var amenitiesList = data[14].split("|");
       var amenities = [];
       for (let j = 0; j < amenitiesList.length; j++) {
-        amenities.push(amenitiesList[j]).replace(/\"/g, "");
+        amenities.push(amenitiesList[j]);
       }
       this.props.firebase.doCreateGym(name, street, city, state, zip, coordinates, initiation_fee, monthly_fee, phone, website, hours, type, rating, classes, amenities);
     }
