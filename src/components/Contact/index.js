@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './Contact.module.css';
 
+import { ButtonPink } from '../Button';
+
 const ContactPage = () => (
   <div className={styles.contact}>
     <ContactForm />
@@ -57,10 +59,10 @@ class ContactForm extends Component {
           >
           </textarea>
         </div>
-        <button className={styles.send} disabled={true} onClick={this.onSubmit}>
+        <ButtonPink className={styles.send} onClick={this.onSubmit}>
           <div className={styles.buttontext}>Send Message</div>
           <checkhor className="right"></checkhor>
-        </button>
+        </ButtonPink>
       </div>
     );
   }

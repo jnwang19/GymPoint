@@ -6,6 +6,7 @@ import posed from 'react-pose';
 import NavBar from '../NavBar';
 import TeamPage from '../Team';
 import ContactPage from '../Contact';
+import { ButtonGreen } from '../Button';
 import * as ROUTES from '../../constants/routes';
 
 const Top = posed.div({
@@ -49,10 +50,10 @@ const LandingPage = () => (
         life you deserve.
       </div>
       <Link to={ROUTES.FIRST_QUESTIONS}>
-        <div className={styles.letsfindbutton}>
+        <ButtonGreen className={styles.letsfindbutton}>
           <div className={styles.buttontextone}>Let's find you a gym</div>
           <checkhor className="right"></checkhor>
-        </div>
+        </ButtonGreen>
       </Link>
     </Top>
     <Page>
@@ -103,10 +104,10 @@ const LandingPage = () => (
         </div>
       </div>
       <Link to={ROUTES.FIRST_QUESTIONS}>
-        <div className={styles.findagymbutton}>
+        <ButtonGreen className={styles.findagymbutton}>
           <div className={styles.buttontexttwo}>Find a Gym</div>
           <checkhor className="right"></checkhor>
-        </div>
+        </ButtonGreen>
       </Link>
       <div className={styles.team}><TeamPage /></div>
       <div className={styles.contact}><ContactPage /></div>

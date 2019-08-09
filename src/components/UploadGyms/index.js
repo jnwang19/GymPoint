@@ -123,6 +123,7 @@ class UploadGymsForm extends Component {
           }
         }
       }
+      var type = [];
       var typeList = data[11].split("/");
       for (let j = 0; j < typeList.length; j++) {
         type.push(typeList[j]);

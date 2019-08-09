@@ -3,6 +3,7 @@ import styles from './FirstQuestions.module.css';
 import posed from 'react-pose';
 import { Link } from 'react-router-dom';
 
+import { ButtonPink } from '../Button';
 import NavBar from '../NavBar';
 import PrelimResultsPage from '../PrelimResults';
 
@@ -141,10 +142,10 @@ class FirstQuestions extends Component {
             lat: this.state.lat,
             long: this.state.long
           }}}>
-          <div className={styles.results}>
+          <ButtonPink className={styles.results}>
             <div className={styles.buttontext}>Preliminary Results</div>
             <checkhor className="right"></checkhor>
-          </div>
+          </ButtonPink>
         </Link>
         : <div className={styles.results}>
             <div className={styles.buttontext}>Preliminary Results</div>
