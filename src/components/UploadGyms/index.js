@@ -97,11 +97,12 @@ class UploadGymsForm extends Component {
       var zip = data[4].replace(/\"/g, "");
       var coordsList = data[5].split("|");
       var coordinates = {lat: coordsList[0].replace(/\"/g, "").parseFloat(), long: coordsList[1].replace(/\"/g, "").parseFloat()};
-      var initiation_fee = data[6].replace(/\"/g, "").parseFloat();
-      var monthly_fee = data[7].replace(/\"/g, "").parseFloat();
-      var phone = data[8].replace(/\"/g, "");
-      var website = data[9].replace(/\"/g, "");
-      var hoursList = data[10].split("|");
+      var phone = data[6].replace(/\"/g, "");
+      var website = data[7].replace(/\"/g, "");
+      var initiation_fee = data[8].replace(/\"/g, "").parseFloat();
+      var monthly_fee = data[9].replace(/\"/g, "").parseFloat();
+      var session_fee = data[10].replace(/\"/g, "").parseFloat();
+      var hoursList = data[11].split("|");
       var hours = {
         1: [],
         2: [],
@@ -124,17 +125,22 @@ class UploadGymsForm extends Component {
         }
       }
       var type = [];
-      var typeList = data[11].split("/");
+      var typeList = data[12].split("/");
       for (let j = 0; j < typeList.length; j++) {
         type.push(typeList[j]);
       }
-      var rating = data[12].replace(/\"/g, "").parseFloat();
-      var classesList = data[13].split("|");
+      var studio_type = [];
+      var studioTypeList = data[13].split("|");
+      for (let j = 0; j < studioTypeList.length; j++) {
+        studio_type.push(studioTypeList[j]);
+      }
+      var rating = data[14].replace(/\"/g, "").parseFloat();
+      var classesList = data[15].split("|");
       var classes = [];
       for (let j = 0; j < classesList.length; j++) {
         classes.push(classesList[j]);
       }
-      var amenitiesList = data[14].split("|");
+      var amenitiesList = data[16].split("|");
       var amenities = [];
       for (let j = 0; j < amenitiesList.length; j++) {
         amenities.push(amenitiesList[j]);

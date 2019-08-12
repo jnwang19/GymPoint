@@ -48,10 +48,12 @@ class Firebase {
       amenities: amenities
     });
 
-  doQueryGyms = (price) =>
+  doQueryGyms = (monthly_fee, session_fee) =>
     this.db.collection("gyms").where(
-      "monthly_fee", "<=", price
-    ).orderBy("monthly_fee")
+      "monthly_fee", "<=", monthly_fee
+    ).where(
+      "session_fee", "<=", session_fee
+    ).orderBy("session_fee")
     .orderBy("rating", "desc").limit(100)
     .get()
     .then(function(querySnapshot) {

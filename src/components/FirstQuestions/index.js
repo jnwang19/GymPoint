@@ -38,10 +38,13 @@ class FirstQuestions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      price: 50,
+      monthly_fee: 50,
+      session_fee: 50,
       distance: 0,
       lat: 0,
-      long: 0
+      long: 0,
+      type: [],
+      studio_type: []
     };
   };
 
@@ -137,10 +140,13 @@ class FirstQuestions extends Component {
           <Link to={{
           pathname: ROUTES.PRELIM_RESULTS,
           state: {
-            price: this.state.price,
+            monthly_fee: this.state.monthly_fee,
+            session_fee: this.state.session_fee,
             distance: this.state.distance,
             lat: this.state.lat,
-            long: this.state.long
+            long: this.state.long,
+            type: this.state.type,
+            studio_type: this.state.studio_type
           }}}>
           <ButtonPink className={styles.results}>
             <div className={styles.buttontext}>Preliminary Results</div>

@@ -95,13 +95,16 @@ class PrelimResults extends Component {
   };
 
   async componentDidMount() {
-
-
     this.setState({isLoading: true});
     let self = this;
 
     var initialList = [];
-    // var initialList = this.props.firebase.doQueryGyms(this.props.price);
+    // var initialList = this.props.firebase.doQueryGyms(this.props.monthly_fee, this.props.session_fee);
+    for (let i = 0; i < initialList.length; i++) {
+      if (!(this.props.type.some(r => initialList[i].includes(r)) && this.props.studio_type.some(r => initialList[i].includes(r)))) {
+        initialList.splice(i, 1);
+      }
+    }
     for (let i = 0; i < initialList.length; i += 10) {
       var queryCoords = this.props.long.toString() + "," + this.props.lat.toString() + ";";
       var destinations = ""
