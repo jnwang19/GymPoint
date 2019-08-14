@@ -44,7 +44,9 @@ class FirstQuestions extends Component {
       lat: 0,
       long: 0,
       type: [],
-      studio_type: []
+      studio_type: [],
+      actualLat: 0,
+      actualLong: 0
     };
   };
 
@@ -54,6 +56,8 @@ class FirstQuestions extends Component {
       navigator.geolocation.getCurrentPosition((function(position) {
         self.setState({lat: position.coords.latitude});
         self.setState({long: position.coords.longitude});
+        self.setState({actualLat: position.coords.latitude});
+        self.setState({actualLong: position.coords.longitude});
       }));
     } else {
       console.log("Geolocation is not supported by this browser.");
@@ -72,8 +76,25 @@ class FirstQuestions extends Component {
     this.setState({distance: choice});
   };
 
-  onQuestionSubmit = () => {
-
+  onUseAddressChange = event => {
+    if (event.target.value) {
+      var query = "https://nominatim.openstreetmap.org/?format=json&addressdetails=1&" +
+      "street=" + this.state.street + "&city=" + this.state.city + "&state=" + this.state.state +
+      "&postalcode=" + this.state.postalcode + "&format=json&limit=1";
+      fetch(query)
+        .then(res => res.json())
+        .then(
+          (result) => {
+            this.setState({
+              lat: result.lat,
+              long: result.long
+            });
+          }
+        )
+    } else {
+      self.setState({lat: this.state.actualLat});
+      self.setState({long: this.state.actualLong});
+    }
   };
 
   render() {
